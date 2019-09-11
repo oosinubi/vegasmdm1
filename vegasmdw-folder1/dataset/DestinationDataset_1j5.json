@@ -1,0 +1,19 @@
+{
+	"name": "DestinationDataset_1j5",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "dest_fourthcoffee",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "rentals"
+			}
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,27 @@
+{
+	"name": "DestinationDataset_ndb",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "dest_vanarsden",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cw_fileName": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().cw_fileName",
+					"type": "Expression"
+				},
+				"fileSystem": "vanarsden"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
