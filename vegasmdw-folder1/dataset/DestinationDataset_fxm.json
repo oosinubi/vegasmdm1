@@ -1,0 +1,20 @@
+{
+	"name": "DestinationDataset_fxm",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "dest_movies",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureBlobFSFile",
+		"typeProperties": {
+			"format": {
+				"type": "JsonFormat",
+				"filePattern": "arrayOfObjects"
+			},
+			"fileName": "movies_file",
+			"folderPath": "movies"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
