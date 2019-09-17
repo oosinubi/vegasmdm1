@@ -1,0 +1,251 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory Name",
+			"defaultValue": "adffemi"
+		},
+		"Service_CloudSales_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Service_CloudSales'"
+		},
+		"dest_cloudsalees_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'dest_cloudsalees'"
+		},
+		"dest_fourthcoffee_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'dest_fourthcoffee'"
+		},
+		"dest_movies_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'dest_movies'"
+		},
+		"dest_vanarsden_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'dest_vanarsden'"
+		},
+		"destin_cloudsales_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'destin_cloudsales'"
+		},
+		"serviceCloudStreaming_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'serviceCloudStreaming'"
+		},
+		"service_fourthcoffee_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'service_fourthcoffee'"
+		},
+		"service_fourthcoffee2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'service_fourthcoffee2'"
+		},
+		"source_cloudsales_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'source_cloudsales'"
+		},
+		"source_movies_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'source_movies'"
+		},
+		"source_vanarsdel_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'source_vanarsdel'"
+		},
+		"DestinationDataset_fxm_properties_typeProperties_fileName": {
+			"type": "string",
+			"defaultValue": "movies_file"
+		},
+		"DestinationDataset_fxm_properties_typeProperties_folderPath": {
+			"type": "string",
+			"defaultValue": "movies"
+		},
+		"DestinationDataset_rhi_properties_typeProperties_fileName": {
+			"type": "string",
+			"defaultValue": "@dataset().cw_fileName"
+		},
+		"DestinationDataset_rhi_properties_typeProperties_folderPath": {
+			"type": "string",
+			"defaultValue": "cloudstreaming"
+		},
+		"DestinationDataset_y4g_properties_typeProperties_fileName": {
+			"type": "string",
+			"defaultValue": "@dataset().cw_fileName"
+		},
+		"DestinationDataset_y4g_properties_typeProperties_folderPath": {
+			"type": "string",
+			"defaultValue": "cloudsales"
+		},
+		"dest_cloudsalees_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsv2femi.dfs.core.windows.net"
+		},
+		"dest_fourthcoffee_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsv2femi.dfs.core.windows.net"
+		},
+		"dest_movies_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsv2femi.dfs.core.windows.net"
+		},
+		"dest_vanarsden_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsv2femi.dfs.core.windows.net"
+		},
+		"destin_cloudsales_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsv2femi.dfs.core.windows.net"
+		},
+		"service_fourthcoffee_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "C:\\Rentals"
+		},
+		"service_fourthcoffee_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "openhackadmin"
+		},
+		"service_fourthcoffee2_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "C:\\"
+		},
+		"service_fourthcoffee2_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "openhackadmin"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas Token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"Service_CloudSales_connectionString": {
+						"value": "[parameters('Service_CloudSales_connectionString')]"
+					},
+					"dest_cloudsalees_accountKey": {
+						"value": "[parameters('dest_cloudsalees_accountKey')]"
+					},
+					"dest_fourthcoffee_accountKey": {
+						"value": "[parameters('dest_fourthcoffee_accountKey')]"
+					},
+					"dest_movies_accountKey": {
+						"value": "[parameters('dest_movies_accountKey')]"
+					},
+					"dest_vanarsden_accountKey": {
+						"value": "[parameters('dest_vanarsden_accountKey')]"
+					},
+					"destin_cloudsales_accountKey": {
+						"value": "[parameters('destin_cloudsales_accountKey')]"
+					},
+					"serviceCloudStreaming_connectionString": {
+						"value": "[parameters('serviceCloudStreaming_connectionString')]"
+					},
+					"source_cloudsales_connectionString": {
+						"value": "[parameters('source_cloudsales_connectionString')]"
+					},
+					"source_movies_connectionString": {
+						"value": "[parameters('source_movies_connectionString')]"
+					},
+					"dest_cloudsalees_properties_typeProperties_url": {
+						"value": "[parameters('dest_cloudsalees_properties_typeProperties_url')]"
+					},
+					"dest_fourthcoffee_properties_typeProperties_url": {
+						"value": "[parameters('dest_fourthcoffee_properties_typeProperties_url')]"
+					},
+					"dest_movies_properties_typeProperties_url": {
+						"value": "[parameters('dest_movies_properties_typeProperties_url')]"
+					},
+					"dest_vanarsden_properties_typeProperties_url": {
+						"value": "[parameters('dest_vanarsden_properties_typeProperties_url')]"
+					},
+					"destin_cloudsales_properties_typeProperties_url": {
+						"value": "[parameters('destin_cloudsales_properties_typeProperties_url')]"
+					},
+					"DestinationDataset_fxm_properties_typeProperties_fileName": {
+						"value": "[parameters('DestinationDataset_fxm_properties_typeProperties_fileName')]"
+					},
+					"DestinationDataset_fxm_properties_typeProperties_folderPath": {
+						"value": "[parameters('DestinationDataset_fxm_properties_typeProperties_folderPath')]"
+					},
+					"DestinationDataset_rhi_properties_typeProperties_fileName": {
+						"value": "[parameters('DestinationDataset_rhi_properties_typeProperties_fileName')]"
+					},
+					"DestinationDataset_rhi_properties_typeProperties_folderPath": {
+						"value": "[parameters('DestinationDataset_rhi_properties_typeProperties_folderPath')]"
+					},
+					"DestinationDataset_y4g_properties_typeProperties_fileName": {
+						"value": "[parameters('DestinationDataset_y4g_properties_typeProperties_fileName')]"
+					},
+					"DestinationDataset_y4g_properties_typeProperties_folderPath": {
+						"value": "[parameters('DestinationDataset_y4g_properties_typeProperties_folderPath')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"service_fourthcoffee_password": {
+						"value": "[parameters('service_fourthcoffee_password')]"
+					},
+					"service_fourthcoffee2_password": {
+						"value": "[parameters('service_fourthcoffee2_password')]"
+					},
+					"source_vanarsdel_connectionString": {
+						"value": "[parameters('source_vanarsdel_connectionString')]"
+					},
+					"service_fourthcoffee_properties_typeProperties_host": {
+						"value": "[parameters('service_fourthcoffee_properties_typeProperties_host')]"
+					},
+					"service_fourthcoffee_properties_typeProperties_userId": {
+						"value": "[parameters('service_fourthcoffee_properties_typeProperties_userId')]"
+					},
+					"service_fourthcoffee2_properties_typeProperties_host": {
+						"value": "[parameters('service_fourthcoffee2_properties_typeProperties_host')]"
+					},
+					"service_fourthcoffee2_properties_typeProperties_userId": {
+						"value": "[parameters('service_fourthcoffee2_properties_typeProperties_userId')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ArmTemplate_0')]"
+			]
+		}
+	]
+}

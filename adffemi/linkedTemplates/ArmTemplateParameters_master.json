@@ -1,0 +1,96 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adffemi"
+		},
+		"Service_CloudSales_connectionString": {
+			"value": ""
+		},
+		"dest_cloudsalees_accountKey": {
+			"value": ""
+		},
+		"dest_fourthcoffee_accountKey": {
+			"value": ""
+		},
+		"dest_movies_accountKey": {
+			"value": ""
+		},
+		"dest_vanarsden_accountKey": {
+			"value": ""
+		},
+		"destin_cloudsales_accountKey": {
+			"value": ""
+		},
+		"serviceCloudStreaming_connectionString": {
+			"value": ""
+		},
+		"service_fourthcoffee_password": {
+			"value": ""
+		},
+		"service_fourthcoffee2_password": {
+			"value": ""
+		},
+		"source_cloudsales_connectionString": {
+			"value": ""
+		},
+		"source_movies_connectionString": {
+			"value": ""
+		},
+		"source_vanarsdel_connectionString": {
+			"value": ""
+		},
+		"DestinationDataset_fxm_properties_typeProperties_fileName": {
+			"value": "movies_file"
+		},
+		"DestinationDataset_fxm_properties_typeProperties_folderPath": {
+			"value": "movies"
+		},
+		"DestinationDataset_rhi_properties_typeProperties_fileName": {
+			"value": "@dataset().cw_fileName"
+		},
+		"DestinationDataset_rhi_properties_typeProperties_folderPath": {
+			"value": "cloudstreaming"
+		},
+		"DestinationDataset_y4g_properties_typeProperties_fileName": {
+			"value": "@dataset().cw_fileName"
+		},
+		"DestinationDataset_y4g_properties_typeProperties_folderPath": {
+			"value": "cloudsales"
+		},
+		"dest_cloudsalees_properties_typeProperties_url": {
+			"value": "https://adlsv2femi.dfs.core.windows.net"
+		},
+		"dest_fourthcoffee_properties_typeProperties_url": {
+			"value": "https://adlsv2femi.dfs.core.windows.net"
+		},
+		"dest_movies_properties_typeProperties_url": {
+			"value": "https://adlsv2femi.dfs.core.windows.net"
+		},
+		"dest_vanarsden_properties_typeProperties_url": {
+			"value": "https://adlsv2femi.dfs.core.windows.net"
+		},
+		"destin_cloudsales_properties_typeProperties_url": {
+			"value": "https://adlsv2femi.dfs.core.windows.net"
+		},
+		"service_fourthcoffee_properties_typeProperties_host": {
+			"value": "C:\\Rentals"
+		},
+		"service_fourthcoffee_properties_typeProperties_userId": {
+			"value": "openhackadmin"
+		},
+		"service_fourthcoffee2_properties_typeProperties_host": {
+			"value": "C:\\"
+		},
+		"service_fourthcoffee2_properties_typeProperties_userId": {
+			"value": "openhackadmin"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
