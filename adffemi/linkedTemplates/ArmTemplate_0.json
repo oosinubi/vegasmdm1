@@ -414,8 +414,12 @@
 				"type": "AzureBlobFSFile",
 				"typeProperties": {
 					"format": {
-						"type": "JsonFormat",
-						"filePattern": "setOfObjects"
+						"type": "TextFormat",
+						"columnDelimiter": ",",
+						"rowDelimiter": "",
+						"treatEmptyAsNull": true,
+						"skipLineCount": 0,
+						"firstRowAsHeader": true
 					},
 					"fileName": {
 						"value": "[parameters('DestinationDataset_y4g_properties_typeProperties_fileName')]",
